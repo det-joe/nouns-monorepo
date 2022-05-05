@@ -50,5 +50,6 @@ export const buildEtherscanApiQuery = (
     apikey: ETHERSCAN_API_KEY,
   });
   const path = `api?${params.toString()}`;
+  console.log("path: ", path);
   return new URL(path, API_BASE_URL).toString();
 };
