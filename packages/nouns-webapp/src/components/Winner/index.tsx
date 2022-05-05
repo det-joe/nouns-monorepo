@@ -12,13 +12,14 @@ interface WinnerProps {
 
 const Winner: React.FC<WinnerProps> = props => {
   const { winner, isNounders } = props;
+  console.log('winner........', winner);
   const activeAccount = useAppSelector(state => state.account.activeAccount);
 
   const isCool = useAppSelector(state => state.application.isCoolBackground);
   const isMobile = isMobileScreen();
 
   const isWinnerYou =
-    activeAccount !== undefined && activeAccount.toLocaleLowerCase() === winner.toLocaleLowerCase();
+    activeAccount !== undefined && winner !== '' && activeAccount.toLocaleLowerCase() === winner.toLocaleLowerCase();
 
   const nonNounderNounContent = isWinnerYou ? (
     <Row className={classes.youSection}>
@@ -46,7 +47,7 @@ const Winner: React.FC<WinnerProps> = props => {
       )}
     </Row>
   ) : (
-    <ShortAddress size={40} address={winner} avatar={true} />
+    <ShortAddress size={40} address={winner !== '' ? winner : '0x0000000000000000000000000000000000000000'} avatar={true} />
   );
 
   const nounderNounContent = <h2>nounders.eth</h2>;
