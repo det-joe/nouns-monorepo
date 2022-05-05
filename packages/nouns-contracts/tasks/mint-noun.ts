@@ -4,7 +4,7 @@ task('mint-noun', 'Mints a Noun')
   .addOptionalParam(
     'nounsToken',
     'The `NounsToken` contract address',
-    '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9',
+    '0xDBC86941A6AcBdfFf8fF5798338Ff40033325A3E',
     types.string,
   )
   .setAction(async ({ nounsToken }, { ethers }) => {

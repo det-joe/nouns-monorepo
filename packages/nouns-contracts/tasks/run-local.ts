@@ -21,6 +21,8 @@ task(
     .unpause({
       gasLimit: 1_000_000,
     });
+  
+  // STEP plus: set all owner to treasury contract
 
   await run('create-proposal', {
     nounsDaoProxy: contracts.NounsDAOProxy.instance.address,
