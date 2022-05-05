@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "start": "cd packages/nouns-webapp && serve -s build",
     "lerna": "lerna",
     "build": "lerna run build",
     "test": "lerna run --parallel test",
